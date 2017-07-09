@@ -42,16 +42,11 @@ async function getCoupleBySearch() {
 			query: {
 				bool: {
 					must: [
-						{
-							match: {
-								memberUuid: '59049eaf-f067-4162-9040-abea66d65fd6'
-							}
-						},
-						{
-							match: {
-								eventTypeId: 1
-							}
-						}
+						{ match: { eventTypeId: 1 } }
+					],
+					should: [
+						{ match: { memberUuid: '59049eaf-f067-4162-9040-abea66d65fd6' } },
+						{ match: { memberUuid: '59049EAF-F067-4162-9040-ABEA66D65FD6' } }
 					]
 				}
 			}
