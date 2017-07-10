@@ -37,7 +37,7 @@
     "hapi-swaggered": "^2.9.0",
     "hapi-swaggered-ui": "^2.6.0",
     "http": "0.0.0",
-    "inert": "^4.1.0",
+    "inert": "^4.2.0",
     "joi": "^10.6.0",
     "joi-generate": "^0.2.0",
     "jsonwebtoken": "^7.3.0",
