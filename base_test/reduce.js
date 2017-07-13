@@ -1,3 +1,4 @@
+/*
 var arr = ["apple","orange",'pear','jade', 'jade'];
 function noPassValue(){
     return arr.reduce(function(prev,next){
@@ -29,3 +30,16 @@ function getWordCnt(){
     },{});
 }
 console.log(getWordCnt());
+*/
+
+const pets = [
+    { id: 1, name: 'dog', age: 10 },
+    { id: 2, name: 'cat', age: 4 },
+    { id: 3, name: 'pig', age: 8 },
+    { id: 4, name: 'dunk' }
+]
+
+const res = pets.map((ele) => {
+    return ele.age || ele.name
+})
+console.log(res);
