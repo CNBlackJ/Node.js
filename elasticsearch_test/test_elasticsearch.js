@@ -57,7 +57,17 @@ async function getCoupleBySearch() {
 	console.log(res.hits.hits[0]);
 }
 
+async function getCoupleRegistry() {
+	const res = await dbClient.get({
+	  index: 'alias_couple_registry',
+	  type: 'couple_registry',
+	  id: 702204614
+	});
+	console.log(res._source.couple_registry_item.length);
+}
+
 // asyncGetCoupleById(id);
 // getCoupleById(id);
 // getCoupleByQuery(id);
-getCoupleBySearch();
+// getCoupleBySearch();
+getCoupleRegistry();
