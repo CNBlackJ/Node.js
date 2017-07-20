@@ -7,11 +7,11 @@ const schema = Joi.array().unique((a,b) => {
 const schema2 = Joi.array().unique('a').unique('b')
 
 const schema3 = {
-	a: Joi.array().valid('b', 'c')
+	a: Joi.string().valid('b', 'c')
 }
 
 // const res = Joi.validate([{a:1,b:7},{a:2, b:1},3], schema2);
-const res = Joi.validate({ a: 'b' }, schema3)
+const res = Joi.validate({ a: 'd' }, schema3)
 
 console.log(res);
 
