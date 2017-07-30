@@ -47,6 +47,7 @@
     "mongodb": "^2.2.25",
     "mongoose": "^4.11.1",
     "node-inspector": "^1.1.1",
+    "nunjucks": "^3.0.1",
     "request": "^2.81.0",
     "rewire": "^2.5.2",
     "should": "^11.2.1",
