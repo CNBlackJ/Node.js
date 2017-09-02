@@ -25,6 +25,8 @@ const res6 = Joi.validate([{id:1}], testArray); //
 
 const res7 = Joi.validate('AA', testLowerCase)
 
+const res8 = Joi.timeStamp()
+
 console.log('result1:');
 console.log(res1);
 console.log('result2:');
@@ -37,3 +39,4 @@ console.log(res4);
 console.log(res5);
 console.log(res6);
 console.log(res7)
+console.log('res8' + res8)
