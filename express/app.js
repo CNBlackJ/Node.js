@@ -1,21 +1,21 @@
 const express = require('express')
 const app = express()
+const errorhandler = require('errorhandler')
+const notifier = require('node-notifier')
 
 app.get('/', async(req, res) => {
-	console.log(Date.now())
-	await (() => {
-		setTimeout((req, res)=>{
-			console.log(Date.now())
-			const result = 'a'
-			res.send('Hello world.' + result)
-		}, 1000)
-	})()
-	console.log(Date.now())
-	await (() => {
-		setTimeout(()=>{
-			console.log(Date.now())
-		}, 1000)
-	})()
+	throw new Error('aaa')
 })
+
+function errorNotification(err, str, req) {
+  var title = 'Error in ' + req.method + ' ' + req.url
+ 
+  notifier.notify({
+    title: title,
+    message: str
+  })
+}
+
+app.use(errorhandler({log: errorNotification}))
 
 app.listen(3000)

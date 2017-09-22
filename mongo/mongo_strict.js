@@ -1,13 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PersonSchema = new Schema({}, {
-    strict: true
+const PersonSchema = new Schema({
+  name: String,
+  band: String
 });
 
 const FoodSchema = new Schema({
   name: String,
   count: Number
+})
+
+FoodSchema.virtual('members', {
+  ref: 'Person',
+  localField: 'name',
+  foreignField: 'name',
+  justOne: false
 })
 
 const Person = mongoose.model('Person', PersonSchema);
@@ -16,6 +24,11 @@ const Food = mongoose.model('Food', FoodSchema);
 mongoose.connect('mongodb://localhost:/test', function(err) {
   if (err) console.log(err.message);
   console.log('Connected');
+
+  Food.find({name: 'iphone'}).populate('members').exec((error, bands) => {
+    if (error) console.log(error)
+    console.log(bands)
+  })
   
   // strict option
   // Person.collection.insert({
@@ -57,14 +70,14 @@ mongoose.connect('mongodb://localhost:/test', function(err) {
   //   console.log(res);
   // });
 
-  Food.find({}).distinct('name').count().exec((err, count) => {
-    console.log(count);
-  })
+  // Food.find({}).distinct('name').count().exec((err, count) => {
+  //   console.log(count);
+  // })
 
-  Food.aggregate(
-    {$group: {_id: '$name', count: {$sum: 1}}}
-  ).exec((err, res) => {
-    console.log(res)
-  })
+  // Food.aggregate(
+  //   {$group: {_id: '$name', count: {$sum: 1}}}
+  // ).exec((err, res) => {
+  //   console.log(res)
+  // })
 
 });
