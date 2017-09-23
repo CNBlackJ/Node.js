@@ -47,6 +47,7 @@
     "koa-route": "^3.2.0",
     "koa-router": "^7.2.1",
     "lab": "^12.1.0",
+    "leancloud-realtime": "^3.5.7",
     "mocha": "^3.4.1",
     "moment": "^2.17.1",
     "mongodb": "^2.2.31",
@@ -60,7 +61,9 @@
     "should": "^11.2.1",
     "sinon": "^1.17.7",
     "vision": "^4.1.1",
-    "when": "^3.7.8"
+    "websocket": "^1.0.24",
+    "when": "^3.7.8",
+    "ws": "^3.2.0"
   },
   "devDependencies": {
     "babel-plugin-syntax-async-functions": "^6.13.0",

@@ -19,13 +19,14 @@ const Person = mongoose.model('Person', PersonSchema);
 const Band = mongoose.model('Band', BandSchema);
 
 
-mongoose.connect('mongodb://localhost:/test', function(err) {
+mongoose.connect('mongodb://localhost/test', function(err) {
   if (err) console.log(err.message);
   console.log('Connected');
 
-  Band.findOne().populate('members').exec(function(error, bands) {
+  Band.find().populate('members').exec(function(error, bands) {
     console.log(bands)
-    console.log(bands.members)
+    console.log(bands[0].members)
+    console.log(bands[1].members)
   });
 
 });
