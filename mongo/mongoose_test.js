@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 //   if (err) console.log(err.message);
 // });
 
-const connectionStr = `mongodb://dev-mongo.chinaeast.cloudapp.chinacloudapi.cn:27017/dev-affiliates`
+const connectionStr = `mongodb://120.78.93.185/test?authSource=admin`
 const dbConnection = mongoose.createConnection(connectionStr,
   {
     user: '',
