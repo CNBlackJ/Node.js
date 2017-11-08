@@ -6,3 +6,4 @@ logger/node_modules
 flow_test/node_modules/
 */logs
 *.logs
+package-lock.json
