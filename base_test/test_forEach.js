@@ -16,7 +16,14 @@
 	for (let i = 0; i < arr.length; i++) {
 		const res = arr[i]
 		if (res === 3) {
-			break
+			continue
+		}
+		console.log('break: ', res)
+	}
+
+	for (let res of arr) {
+		if (res === 3) {
+			continue
 		}
 		console.log('break: ', res)
 	}
