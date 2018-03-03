@@ -27,3 +27,11 @@
 		}
 		console.log('break: ', res)
 	}
+
+	for (let i = 0; i < arr.length; i++) {
+		const res = arr[i]
+		if (res === 3) {
+			break
+		}
+		console.log('break: ', res)
+	}
