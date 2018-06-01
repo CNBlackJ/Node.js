@@ -31,6 +31,7 @@
     "errorhandler": "^1.5.0",
     "faker": "^3.1.0",
     "flow-remove-types": "^1.2.0",
+    "fluent-ffmpeg": "^2.1.2",
     "generator-keystone": "^0.4.2",
     "hapi": "^16.4.3",
     "hapi-auth-jwt": "^4.0.0",
